@@ -66,8 +66,6 @@ function generateMarkdown(data) {
 
 
   `
-  console.log(data);
-  console.log(license);
 
 };
 
