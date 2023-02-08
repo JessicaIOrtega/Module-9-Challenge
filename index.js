@@ -5,8 +5,6 @@ const fs = require('fs/promises');
 const generateMarkdown = require("./generateMarkdown");
 
 // TODO: Create an array of questions for user input
-
-
 inquirer
     .prompt([
         {
@@ -32,7 +30,7 @@ inquirer
         {
             type: 'input',
             name: 'credits',
-            message: 'Enter contributors:',
+            message: 'Credits:',
         },
         {
             type: 'checkbox',
@@ -63,13 +61,13 @@ inquirer
         {
             type: 'input',
             name: 'email',
-            message: 'Enter email',
+            message: 'Enter your email',
         }
 
     ])
     .then((response) => {
         console.log(response)
-        fs.writeFile("example.md", generateMarkdown(response));
+        fs.writeFile("README.md", generateMarkdown(response));
     });
 
 // TODO: Create a function to write README file
